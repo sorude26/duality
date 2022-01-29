@@ -1,13 +1,12 @@
+using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
-using UnityEngine;
-
 
 /// <summary>
 /// スクリプト追加時Rigidbodyをオブジェクトに追加する
 /// BoxColliderはプレイヤーの正面に配置する
 /// </summary>
-[RequireComponent(typeof(Rigidbody),(typeof(BoxCollider)))]
+[RequireComponent(typeof(Rigidbody), (typeof(BoxCollider)))]
 
 public class PlayerController : MonoBehaviour
 {
@@ -21,6 +20,10 @@ public class PlayerController : MonoBehaviour
 
     [SerializeField, Tooltip("プレイヤーの攻撃範囲のオブジェクト")] GameObject m_attackColliderObject;
 
+    bool m_isPoint;
+
+    [SerializeField] string m_pointTagName;
+
     /// <summary>
     /// コンポーネント用変数
     /// </summary>
@@ -31,6 +34,7 @@ public class PlayerController : MonoBehaviour
     /// </summary>
     void Start()
     {
+        ScoreManager.OnAddScore += Check;
         m_playerRb = GetComponent<Rigidbody>();
     }
 
@@ -62,15 +66,23 @@ public class PlayerController : MonoBehaviour
     /// </summary>
     void Attack()
     {
-        if(Input.GetButtonDown("Fire1"))
+        if (Input.GetButtonDown("Fire1"))
         {
-            m_attackColliderObject.GetComponent<BoxCollider>().enabled = true;
+            if (!_attack)
+            {
+                _attack = true;
+                StartCoroutine(Attack(0.1f));
+            }
             Debug.Log("Attck");
         }
-        else
-        {
-            m_attackColliderObject.GetComponent<BoxCollider>().enabled = false;
-        }
+    }
+    bool _attack = false;
+    IEnumerator Attack(float time)
+    {
+        m_attackColliderObject.GetComponent<BoxCollider>().enabled = true;
+        yield return new WaitForSeconds(time);
+        m_attackColliderObject.GetComponent<BoxCollider>().enabled = false;
+        _attack = false;
     }
 
     /// <summary>
@@ -79,9 +91,26 @@ public class PlayerController : MonoBehaviour
     /// <param name="other"></param>
     void OnTriggerEnter(Collider other)
     {
-        if(other.tag == m_enemyTag)
+        if(other.tag == m_pointTagName)
         {
-            
+            m_isPoint = true;
+        }
+    }
+
+    private void OnTriggerExit(Collider other)
+    {
+        if (other.tag == m_pointTagName)
+        {
+            m_isPoint = false;
+        }
+    }
+
+    void Check()
+    {
+        if(!m_isPoint)
+        {
+            GameManager.GameOver();
+            ScoreManager.OnAddScore -= Check;
         }
     }
 }

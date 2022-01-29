@@ -25,11 +25,17 @@ public class TimeManager : MonoBehaviour
     // ñÈÇ©Ç«Ç§Ç©ÇÃîªíË
     bool isNightTime;
 
-    bool isDayRepeat;
+    //bool isDayRepeat;
 
-    bool isNightRepeat;
+    //bool isNightRepeat;
 
-
+    public bool IsNightTime
+    {
+        get
+        {
+            return isNightTime;
+        }
+    }
 
     void Start()
     {
@@ -39,9 +45,9 @@ public class TimeManager : MonoBehaviour
         // ñÈÇOFFÇ…ê›íË
         isNightTime = false;
 
-        isDayRepeat = false;
+        //isDayRepeat = false;
 
-        isNightRepeat = false;
+        //isNightRepeat = false;
     }
 
     // Update is called once per frame

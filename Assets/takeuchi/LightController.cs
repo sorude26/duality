@@ -13,6 +13,14 @@ public class LightController : MonoBehaviour
     [SerializeField]
     bool _night = false;
     bool _change = false;
+    private void OnEnable()
+    {
+        EventManager.OnChangeTimeZone += ChangeTimeZone;
+    }
+    private void OnDisable()
+    {
+        EventManager.OnChangeTimeZone -= ChangeTimeZone;
+    }
     public void ChangeTimeZone()
     {
         if (_change)

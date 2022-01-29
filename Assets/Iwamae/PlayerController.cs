@@ -19,6 +19,8 @@ public class PlayerController : MonoBehaviour
 
     [SerializeField, Tooltip("プレイヤーの回転速度")] float m_rtSpeed = 0.1f;
 
+    [SerializeField, Tooltip("プレイヤーの攻撃範囲のオブジェクト")] GameObject m_attackColliderObject;
+
     /// <summary>
     /// コンポーネント用変数
     /// </summary>
@@ -62,12 +64,12 @@ public class PlayerController : MonoBehaviour
     {
         if(Input.GetButtonDown("Fire1"))
         {
-            GetComponent<BoxCollider>().enabled = true;
+            m_attackColliderObject.GetComponent<BoxCollider>().enabled = true;
             Debug.Log("Attck");
         }
         else
         {
-            GetComponent<BoxCollider>().enabled = false;
+            m_attackColliderObject.GetComponent<BoxCollider>().enabled = false;
         }
     }
 
@@ -79,7 +81,7 @@ public class PlayerController : MonoBehaviour
     {
         if(other.tag == m_enemyTag)
         {
-            other.GetComponent<EnemyScript>().IsDeath = true;
+            
         }
     }
 }

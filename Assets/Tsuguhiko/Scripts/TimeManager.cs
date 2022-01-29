@@ -29,6 +29,9 @@ public class TimeManager : MonoBehaviour
 
     //bool isNightRepeat;
 
+    [Header("ÉVÅ[Éìè„Ç≈égÇ§Light")]
+    [SerializeField]
+    LightController[] _lightControllers;
     public bool IsNightTime
     {
         get
@@ -74,8 +77,8 @@ public class TimeManager : MonoBehaviour
     void Night()
     {
         isDayTime = false;
-        Debug.Log("ñÈÇ…Ç»ÇËÇ‹ÇµÇΩ");
         isNightTime = true;
+        ChangeLight();
         CancelInvoke();
         
     }
@@ -83,9 +86,20 @@ public class TimeManager : MonoBehaviour
     void Morning()
     {
         isNightTime = false;
-        Debug.Log("í©Ç…Ç»ÇËÇ‹ÇµÇΩ");
         isDayTime = true;
-        CancelInvoke();
-        
+        ChangeLight();
+        CancelInvoke();        
+    }
+
+    void ChangeLight()
+    {
+        if (_lightControllers == null)
+        {
+            return;
+        }
+        foreach (var light in _lightControllers)
+        {
+            light.ChangeTimeZone();
+        }
     }
 }

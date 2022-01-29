@@ -78,7 +78,7 @@ public class EnemyScript : MonoBehaviour
     /// </summary>
     void PointUp()
     {
-
+        ScoreManager.AddScore(_point);
     }
 
     /// <summary>

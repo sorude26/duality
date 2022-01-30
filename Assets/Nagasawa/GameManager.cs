@@ -1,11 +1,14 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
     static GameManager Instance;
     [SerializeField] string _gameOverSceneName;
+    [SerializeField] string _resultSceneName;
+    /// <summary>
+    /// GameManager‚Ìƒ^ƒCƒ€
+    /// </summary>
+    static public float _time;
 
     void Awake()
     {
@@ -18,8 +21,15 @@ public class GameManager : MonoBehaviour
             Destroy(gameObject);
         }
     }
+
     static public void GameOver()
     {
         SceneChange.LoadScene(Instance._gameOverSceneName);
+    }
+
+    static public void Result()
+    {
+        _time = GameObject.FindObjectOfType<TimeCountManager>().TimeCount;
+        SceneChange.LoadScene(Instance._resultSceneName);
     }
 }

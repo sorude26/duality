@@ -48,6 +48,21 @@ public class FadeController : MonoBehaviour
         }
         instance.StartCoroutine(instance.FadeOut(action));
     }
+    public static void StartFadeOutIn(Action outAction = null, Action inAction = null)
+    {
+        if (instance == null)
+        {
+            outAction?.Invoke();
+            inAction?.Invoke();
+            return;
+        }
+        instance.StartCoroutine(instance.FadeOutIn(outAction, inAction));
+    }
+    IEnumerator FadeOutIn(Action outAction, Action inAction)
+    {
+        yield return FadeOut(outAction);
+        yield return FadeIn(inAction);
+    }
     IEnumerator FadeIn(Action action)
     {
         _fadeImage.gameObject.SetActive(true);

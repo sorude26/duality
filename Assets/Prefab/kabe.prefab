@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1586991154743145098}
   - component: {fileID: 4389248730419565532}
+  - component: {fileID: 2471232807499989489}
   m_Layer: 0
   m_Name: kabe
   m_TagString: Untagged
@@ -82,3 +83,20 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &2471232807499989489
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6777159666264825512}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 34a3b0a8f5789174caabbb6645276f75, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _sprites:
+  - {fileID: 4389248730419565532}
+  _shadowColor: {r: 0, g: 0, b: 0, a: 0}
+  _changeSpeed: 0.1
+  _night: 0

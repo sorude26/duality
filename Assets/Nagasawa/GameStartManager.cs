@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class GameStartManager : MonoBehaviour
 {
-    float _count = 3;
+    float _count = 4;
     [SerializeField] Text _countDownText;
 
     void Start()

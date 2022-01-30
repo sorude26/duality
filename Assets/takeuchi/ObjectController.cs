@@ -8,7 +8,6 @@ public class ObjectController : MonoBehaviour
     GameObject _object = default;
     [SerializeField]
     bool _night = false;
-    bool _change = false;
     private void OnEnable()
     {
         EventManager.OnChangeTimeZone += ChangeTimeZone;
@@ -19,11 +18,6 @@ public class ObjectController : MonoBehaviour
     }
     public void ChangeTimeZone()
     {
-        if (_change)
-        {
-            return;
-        }
-        _change = true;
         if (_night)
         {
             _object.SetActive(false);

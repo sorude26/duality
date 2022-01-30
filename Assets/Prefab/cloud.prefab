@@ -111,14 +111,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6a2a5183e8d313b4abcd8e3a54926df4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _moveTime: {x: 0.5, y: 2}
-  _waitTime: {x: 0.5, y: 2}
+  _moveTime: {x: 1, y: 5}
+  _waitTime: {x: 0, y: 0.02}
   _moveDirs:
   - {x: 1, y: 0, z: 0}
   - {x: -1, y: 0, z: 0}
   - {x: 0, y: 0, z: 1}
   - {x: 0, y: 0, z: -1}
-  _moveSpeed: 3
+  - {x: 1, y: 0, z: -1}
+  - {x: 1, y: 0, z: 1}
+  - {x: -1, y: 0, z: -1}
+  - {x: -1, y: 0, z: 1}
+  _moveSpeed: 0.5
 --- !u!1 &4978062881041749395
 GameObject:
   m_ObjectHideFlags: 0

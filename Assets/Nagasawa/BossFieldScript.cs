@@ -23,7 +23,7 @@ public class BossFieldScript : MonoBehaviour
     /// </summary>
     void BossOpen()
     {
-        if (ScoreManager.CurrentScore >= _bossScore)
+        if (ScoreManager.CurrentTotalScore >= _bossScore)
         {
             OnBossField?.Invoke();
         }

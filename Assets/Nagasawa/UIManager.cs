@@ -7,6 +7,6 @@ public class UIManager : MonoBehaviour
 
     void Update()
     {
-        _scoreText.text = ScoreManager.CurrentScore.ToString();
+        _scoreText.text = ScoreManager.CurrentTotalScore.ToString();
     }
 }

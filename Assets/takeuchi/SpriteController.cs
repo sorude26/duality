@@ -2,14 +2,14 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class LightController : MonoBehaviour
+public class SpriteController : MonoBehaviour
 {
     [SerializeField]
-    Light _light = default;
+    SpriteRenderer[] _sprites = default;
     [SerializeField]
-    float _daytimeIntensity = 1f;
+    Color _shadowColor = default;
     [SerializeField]
-    float _changeSpeed = 1f;
+    float _changeSpeed = 0.1f;
     [SerializeField]
     bool _night = false;
     bool _change = false;
@@ -39,28 +39,39 @@ public class LightController : MonoBehaviour
     }
     IEnumerator ChangeIntensityUp()
     {
-        float current = _light.intensity;
-        while (current < _daytimeIntensity)
+        Color current = _sprites[0].color;
+        float timer = 0;
+        while (timer < 1)
         {
-            current += _changeSpeed * Time.deltaTime;
-            _light.intensity = current;
+            timer += _changeSpeed * Time.deltaTime;
+            current = Color.Lerp(current, Color.white, timer);
+            SetColor(current);
             yield return null;
         }
-        _light.intensity = _daytimeIntensity;
+        SetColor(Color.white);
         _change = false;
         _night = false;
     }
     IEnumerator ChangeIntensityDown()
     {
-        float current = _light.intensity;
-        while (current > 0)
+        Color current = _sprites[0].color;
+        float timer = 0;
+        while (timer < 1)
         {
-            current -= _changeSpeed * Time.deltaTime;
-            _light.intensity = current;
+            timer += _changeSpeed * Time.deltaTime;
+            current = Color.Lerp(current, _shadowColor, timer);
+            SetColor(current);
             yield return null;
         }
-        _light.intensity = 0;
+        SetColor(_shadowColor);
         _change = false;
         _night = true;
+    }
+    void SetColor(Color color)
+    {
+        foreach (var sprite in _sprites)
+        {
+            sprite.color = color;
+        }
     }
 }

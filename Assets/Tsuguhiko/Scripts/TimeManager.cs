@@ -81,7 +81,6 @@ public class TimeManager : MonoBehaviour
         isNightTime = true;
         EventManager.ChangeTimeZone();
         CancelInvoke();
-        
     }
 
     void Morning()

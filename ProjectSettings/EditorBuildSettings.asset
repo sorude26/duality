@@ -6,6 +6,21 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/SampleScene.unity
-    guid: 2cda990e2423bbf4892e6590ba056729
+    path: Assets/Scenes/Title.unity
+    guid: 3c57b35d258bc9349bd76d9d4a8e918b
+  - enabled: 1
+    path: Assets/takeuchi/StoryBoardScene.unity
+    guid: d636c50ec7366ff488f360c6338295b2
+  - enabled: 1
+    path: Assets/Scenes/Game.unity
+    guid: 945daa8c46a96e54f9734eb9411c1605
+  - enabled: 1
+    path: Assets/Scenes/KingField.unity
+    guid: 2b70774059d69904ca0d46ad696723ed
+  - enabled: 1
+    path: Assets/Scenes/GameOver.unity
+    guid: 41f1b92507392374383636e9f99978ba
+  - enabled: 1
+    path: Assets/Scenes/Result.unity
+    guid: dd271edbf35fcdf40bdc08edba9d5564
   m_configObjects: {}

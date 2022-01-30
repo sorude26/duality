@@ -1,9 +1,14 @@
 fileFormatVersion: 2
-guid: 12615764b8912cf4ca15619c47a4aeb6
+guid: d45c41ffcaec32b4ca09a58b1bf89104
 ModelImporter:
   serializedVersion: 20200
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: King_face_1Material
+    second: {fileID: 2100000, guid: 3706f86c45b13374bbb472754a80284d, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0

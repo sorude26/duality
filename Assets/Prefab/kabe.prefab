@@ -10,7 +10,8 @@ GameObject:
   m_Component:
   - component: {fileID: 1586991154743145098}
   - component: {fileID: 4389248730419565532}
-  - component: {fileID: 2471232807499989489}
+  - component: {fileID: 1618056140}
+  - component: {fileID: 1618056139}
   m_Layer: 0
   m_Name: kabe
   m_TagString: Untagged
@@ -27,7 +28,7 @@ Transform:
   m_GameObject: {fileID: 6777159666264825512}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -51.573204, y: 46.78352, z: 40.06172}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1.003, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -83,7 +84,20 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &2471232807499989489
+--- !u!65 &1618056140
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6777159666264825512}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 74.84996, y: 8.681843, z: 0.20000005}
+  m_Center: {x: 10.474976, y: 0.08555889, z: -3.5171546e-14}
+--- !u!114 &1618056139
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -97,6 +111,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _sprites:
   - {fileID: 4389248730419565532}
-  _shadowColor: {r: 0, g: 0, b: 0, a: 0}
+  _shadowColor: {r: 0.41568628, g: 0.41568628, b: 0.41568628, a: 1}
   _changeSpeed: 0.1
   _night: 0

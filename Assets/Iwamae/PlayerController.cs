@@ -43,6 +43,10 @@ public class PlayerController : MonoBehaviour
     /// </summary>
     void Update()
     {
+        if(GameObject.FindObjectOfType<GameStartManager>())
+        {
+            return;
+        }
         float h = Input.GetAxisRaw("Horizontal");
         float i = Input.GetAxisRaw("Vertical");
         Vector3 dir = new Vector3(h, 0, i);

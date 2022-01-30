@@ -53,6 +53,10 @@ public class TimeManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if(GameObject.FindObjectOfType<GameStartManager>())
+        {
+            return;
+        }
         // カウントアップ開始
         _count += Time.deltaTime;
 

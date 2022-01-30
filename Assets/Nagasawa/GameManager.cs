@@ -5,6 +5,9 @@ public class GameManager : MonoBehaviour
     static GameManager Instance;
     [SerializeField] string _gameOverSceneName;
     [SerializeField] string _resultSceneName;
+    /// <summary>
+    /// GameManager‚Ìƒ^ƒCƒ€
+    /// </summary>
     static public float _time;
 
     void Awake()

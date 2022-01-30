@@ -63,7 +63,7 @@ public class TimeManager : MonoBehaviour
         _second = (int)_count;
 
         // Text‚É•\Ž¦
-        _timeText.text = _second.ToString();
+        _timeText.text = "Time:"+_second.ToString();
 
         if (_second > _span && isDayTime == true)
         {

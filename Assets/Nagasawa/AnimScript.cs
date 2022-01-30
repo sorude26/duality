@@ -6,12 +6,7 @@ public class AnimScript : MonoBehaviour
 {
     [SerializeField] Rigidbody _rb;
     bool _isRun;
-    [SerializeField] bool _isPlayer;
     [SerializeField] Animator _anim;
-    void Start()
-    {
-
-    }
 
     void Update()
     {
@@ -25,10 +20,5 @@ public class AnimScript : MonoBehaviour
             _isRun = false;
             _anim.SetBool("Run", _isRun);
         }
-
-        //if(_isPlayer)
-        //{
-        //    _anim.SetBool("Attack", _isRun);
-        //}
     }
 }

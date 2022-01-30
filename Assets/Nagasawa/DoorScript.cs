@@ -22,7 +22,7 @@ public class DoorScript : MonoBehaviour
     {
         if(other.name == "Player")
         {
-            SceneChange.LoadScene("KingsField");
+            SceneChange.LoadScene("KingField");
         }
     }
 }

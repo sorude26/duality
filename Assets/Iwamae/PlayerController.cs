@@ -24,6 +24,7 @@ public class PlayerController : MonoBehaviour
 
     [SerializeField] string m_pointTagName;
 
+    [SerializeField] Animator _anim;
 
     /// <summary>
     /// コンポーネント用変数
@@ -78,8 +79,8 @@ public class PlayerController : MonoBehaviour
             {
                 _attack = true;
                 StartCoroutine(Attack(0.1f));
+                _anim.Play("ho_hook_left_A");
             }
-            Debug.Log("Attck");
         }
     }
     bool _attack = false;

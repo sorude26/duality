@@ -1134,9 +1134,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _score: 100
-  _killScore: 1
-  _effectPrefab: {fileID: 0}
-  _deadEffectPrefab: {fileID: 0}
+  _killScore: 100
+  _effectPrefab: {fileID: 4475949591982245483, guid: 84f940a20e4427d4ca64d4b3c4a88707, type: 3}
+  _deadEffectPrefab: {fileID: 5971777464386543735, guid: 5c76621f6b3644746ad622c5e3824e19, type: 3}
   _models:
   - {fileID: 7312622293763674079}
   - {fileID: 8920528772928736829}

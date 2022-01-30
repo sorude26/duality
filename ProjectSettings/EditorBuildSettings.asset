@@ -9,7 +9,7 @@ EditorBuildSettings:
     path: Assets/Scenes/Title.unity
     guid: 3c57b35d258bc9349bd76d9d4a8e918b
   - enabled: 1
-    path: Assets/takeuchi/StoryBoardScene.unity
+    path: Assets/Scenes/StoryBoardScene.unity
     guid: d636c50ec7366ff488f360c6338295b2
   - enabled: 1
     path: Assets/Scenes/Game.unity

@@ -24,6 +24,7 @@ public class PlayerController : MonoBehaviour
 
     [SerializeField] string m_pointTagName;
 
+
     /// <summary>
     /// コンポーネント用変数
     /// </summary>
@@ -55,6 +56,7 @@ public class PlayerController : MonoBehaviour
         //プレイヤーが移動していたら
         if (m_playerRb.velocity.magnitude > 0)
         {
+            
             //正面をプレイヤーの移動している方向に向ける
             transform.rotation = Quaternion.Slerp(transform.rotation,
                                                   Quaternion.LookRotation(m_playerRb.velocity),
